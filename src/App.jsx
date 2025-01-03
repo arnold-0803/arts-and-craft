@@ -1,9 +1,26 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import TopBar from "./components/TopBar";
+import HomePage from "./pages/home/HomePage";
 
 
 function App() {
   return (
-    <div className="text-red-500 text-[2rem]">
-      Hello group members
+    <div>
+      <BrowserRouter>
+        <div>
+          <TopBar/>
+          <Navbar/>
+        </div>
+        <div>
+          <Routes>
+            <Route path="/" element={<HomePage/>}/>
+          </Routes>
+        </div>
+        <div>
+          Footer
+        </div>
+      </BrowserRouter>
     </div>
   )
 }
